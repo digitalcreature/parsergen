@@ -25,5 +25,8 @@ pLex pa = do
   a <- pa
   return $ Lex (Just s) a
 
+val :: Lex a -> a
+val (Lex _ a) = a
+
 pos :: Lex a -> Maybe SourcePos
 pos (Lex p _) = p
